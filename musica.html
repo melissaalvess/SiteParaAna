@@ -1,1 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
 
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Anexo Musical</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+:root{
+
+    --primary:#E63946;
+    --primary-dark:#D62839;
+    --offwhite:#FAF7F2;
+    --paper:#FFFDF9;
+    --text:#444;
+
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    min-height:100vh;
+
+    background:
+    radial-gradient(circle at top left,
+    rgba(230,57,70,.08),
+    transparent 35%),
+
+    radial-gradient(circle at bottom right,
+    rgba(255,180,162,.15),
+    transparent 40%),
+
+    var(--offwhite);
+
+    font-family:
+    "Segoe UI",
+    sans-serif;
+
+    padding:25px 15px;
+}
+
+.music-card{
+
+    max-width:900px;
+
+    margin:auto;
+
+    background:var(--paper);
+
+    border-radius:30px;
+
+    padding:30px;
+
+    box-shadow:
+    0 20px 40px rgba(0,0,0,.08);
+
+}
+
+.header{
+
+    text-align:center;
+
+    margin-bottom:25px;
+}
+
+.header h1{
+
+    color:var(--primary);
+
+    font-weight:800;
+
+    margin-bottom:10px;
+}
+
+.header p{
+
+    color:#777;
+
+    margin-bottom:0;
+}
+
+.attachment{
+
+    display:inline-block;
+
+    padding:8px 14px;
+
+    border-radius:12px;
+
+    background:rgba(230,57,70,.08);
+
+    color:var(--primary);
+
+    font-size:.85rem;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    margin-bottom:20px;
+}
+
+.video-wrapper{
+
+    position:relative;
+
+    width:100%;
+
+    overflow:hidden;
+
+    border-radius:24px;
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.12);
+
+    margin-bottom:25px;
+}
+
+.video-wrapper iframe{
+
+    width:100%;
+
+    aspect-ratio:16/9;
+
+    border:none;
+
+    display:block;
+}
+
+.message{
+
+    color:var(--text);
+
+    line-height:1.9;
+
+    text-align:center;
+}
+
+.message h4{
+
+    color:var(--primary);
+
+    font-weight:700;
+
+    margin-bottom:18px;
+}
+
+.message p{
+
+    margin-bottom:15px;
+}
+
+.quote{
+
+    margin-top:25px;
+
+    padding:20px;
+
+    background:rgba(230,57,70,.05);
+
+    border-radius:18px;
+
+    font-style:italic;
+
+    color:#666;
+}
+
+.buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+    margin-top:35px;
+}
+
+.btn-custom{
+
+    background:var(--primary);
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:15px;
+
+    padding:12px 22px;
+
+    transition:.3s;
+
+    box-shadow:
+    0 10px 25px rgba(230,57,70,.2);
+}
+
+.btn-custom:hover{
+
+    background:var(--primary-dark);
+
+    color:white;
+
+    transform:translateY(-3px);
+}
+
+.footer-note{
+
+    margin-top:25px;
+
+    text-align:center;
+
+    color:#999;
+
+    font-size:.9rem;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="music-card">
+
+    <div class="header">
+
+        <div class="attachment">
+            ANEXO MUSICAL
+        </div>
+
+        <h1>Anexo Musical</h1>
+
+        <p>
+            Arquivo anexado à correspondência.
+        </p>
+
+    </div>
+
+    <div class="video-wrapper">
+
+        <iframe
+            src="https://www.youtube.com/embed/NdYWuo9OFAw"
+            title="Iris - Goo Goo Dolls"
+            allowfullscreen>
+        </iframe>
+
+    </div>
+
+    <div class="message">
+
+        <h4>Iris — Goo Goo Dolls</h4>
+
+        <p>
+            Existem músicas que marcam momentos.
+            Outras acabam marcando pessoas.
+        </p>
+
+        <p>
+            Sempre que essa toca, eu lembro das nossas
+            conversas, das risadas, dos dias simples que
+            acabaram se tornando importantes e de tudo o
+            que construímos até aqui.
+        </p>
+
+        <div class="quote">
+
+            "Algumas músicas se tornam lugares.
+            Sempre que escuto essa, encontro você."
+
+        </div>
+
+    </div>
+
+    <div class="buttons">
+
+        <a href="carta.html" class="btn-custom">
+            Voltar para a carta
+        </a>
+
+        <a href="fotos.html" class="btn-custom">
+            Voltar para as fotos
+        </a>
+
+    </div>
+
+    <div class="footer-note">
+        Correspondência Especial • Anexo Musical
+    </div>
+
+</div>
+
+</body>
+</html>
