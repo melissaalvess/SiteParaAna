@@ -1,7 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -13,6 +14,7 @@
 
 :root{
     --primary:#E63946;
+    --primary-dark:#D62839;
     --offwhite:#FAF7F2;
     --paper:#FFFDF9;
 }
@@ -32,7 +34,7 @@ body{
 
     min-height:100vh;
 
-    padding:30px 15px;
+    padding:25px 15px;
 
     font-family:
     "Segoe UI",
@@ -43,7 +45,7 @@ body{
 
     text-align:center;
 
-    margin-bottom:30px;
+    margin-bottom:25px;
 }
 
 .header h1{
@@ -69,27 +71,28 @@ body{
     box-shadow:
     0 20px 40px rgba(0,0,0,.08);
 
-    max-width:700px;
+    max-width:800px;
 
     margin:auto;
 }
 
 .photo-container{
 
-    height:500px;
-
-    background:#f4f4f4;
+    height:65vh;
 
     display:flex;
 
+    justify-content:center;
+
     align-items:center;
 
-    justify-content:center;
+    background:#f7f7f7;
 }
 
 .photo-container img{
 
     width:100%;
+
     height:100%;
 
     object-fit:contain;
@@ -97,7 +100,8 @@ body{
 
 .caption{
 
-    padding:25px;
+    padding:20px;
+
     text-align:center;
 }
 
@@ -110,58 +114,19 @@ body{
 
 .caption p{
 
-    color:#666;
-
     margin-bottom:0;
+
+    color:#666;
 }
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon{
 
-    background-color:rgba(0,0,0,.5);
+    background-color:rgba(0,0,0,.55);
 
     border-radius:50%;
 
     padding:20px;
-}
-
-.bottom-buttons{
-
-    margin-top:35px;
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:15px;
-
-    flex-wrap:wrap;
-}
-
-.btn-custom{
-
-    background:var(--primary);
-
-    color:white;
-
-    border:none;
-
-    border-radius:14px;
-
-    padding:12px 20px;
-
-    text-decoration:none;
-
-    transition:.3s;
-}
-
-.btn-custom:hover{
-
-    background:#d62839;
-
-    color:white;
-
-    transform:translateY(-3px);
 }
 
 .counter{
@@ -170,21 +135,63 @@ body{
 
     margin-top:15px;
 
-    color:#888;
+    color:#777;
+}
+
+.bottom-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+    margin-top:30px;
+}
+
+.btn-custom{
+
+    background:var(--primary);
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:12px 22px;
+
+    border-radius:15px;
+
+    transition:.3s;
+
+    box-shadow:
+    0 10px 25px rgba(230,57,70,.2);
+}
+
+.btn-custom:hover{
+
+    color:white;
+
+    background:var(--primary-dark);
+
+    transform:translateY(-3px);
 }
 
 </style>
+
 </head>
+
 <body>
 
 <div class="container">
 
     <div class="header">
 
-        <h1>📎 Anexos Fotográficos</h1>
+        <h1>📎 Nossas memórias </h1>
 
         <p>
-            Algumas lembranças que eu gosto de guardar.
+            Algumas lembranças de dias que não eram especiais, mas se tornaram
         </p>
 
     </div>
@@ -195,80 +202,8 @@ body{
              class="carousel slide"
              data-bs-ride="false">
 
-            <div class="carousel-inner">
-
-                <!-- FOTO 01 -->
-                <div class="carousel-item active">
-
-                    <div class="photo-container">
-                        <img src="img/foto01.jpg">
-                    </div>
-
-                    <div class="caption">
-                        <h5>Anexo 01 ❤️</h5>
-                        <p>Sua legenda aqui.</p>
-                    </div>
-
-                </div>
-
-                <!-- FOTO 02 -->
-                <div class="carousel-item">
-
-                    <div class="photo-container">
-                        <img src="img/foto02.jpg">
-                    </div>
-
-                    <div class="caption">
-                        <h5>Anexo 02 ❤️</h5>
-                        <p>Sua legenda aqui.</p>
-                    </div>
-
-                </div>
-
-                <!-- FOTO 03 -->
-                <div class="carousel-item">
-
-                    <div class="photo-container">
-                        <img src="img/foto03.jpg">
-                    </div>
-
-                    <div class="caption">
-                        <h5>Anexo 03 ❤️</h5>
-                        <p>Sua legenda aqui.</p>
-                    </div>
-
-                </div>
-
-                <!-- FOTO 04 -->
-                <div class="carousel-item">
-
-                    <div class="photo-container">
-                        <img src="img/foto04.jpg">
-                    </div>
-
-                    <div class="caption">
-                        <h5>Anexo 04 ❤️</h5>
-                        <p>Sua legenda aqui.</p>
-                    </div>
-
-                </div>
-
-                <!-- FOTO 05 -->
-                <div class="carousel-item">
-
-                    <div class="photo-container">
-                        <img src="img/foto05.jpg">
-                    </div>
-
-                    <div class="caption">
-                        <h5>Anexo 05 ❤️</h5>
-                        <p>Sua legenda aqui.</p>
-                    </div>
-
-                </div>
-
-                <!-- CONTINUE ATÉ FOTO 23 -->
-
+            <div class="carousel-inner"
+                 id="carouselInner">
             </div>
 
             <button class="carousel-control-prev"
@@ -299,18 +234,90 @@ body{
 
     <div class="bottom-buttons">
 
-        <a href="carta.html" class="btn-custom">
-            Carta
+        <a href="carta.html"
+           class="btn-custom">
+
+            💌 Voltar para a carta
+
         </a>
 
-        <a href="index.html" class="btn-custom">
-          Voltar
-        </a>
+        <a href="index.html"
+           class="btn-custom">
 
+            🏠 Página inicial
+
+        </a>
 
     </div>
 
 </div>
+
+<script>
+
+const fotos = [
+
+"IMG-20251002-WA0048.jpg",
+"IMG-20251018-WA0028.jpg",
+"IMG-20251114-WA0072.jpg",
+"IMG-20251115-WA0020.jpg",
+"IMG-20251121-WA0080.jpg",
+"IMG-20251121-WA0082.jpg",
+"IMG-20251202-WA0049.jpg",
+"IMG-20251208-WA0031.jpg",
+"IMG-20251212-WA0142.jpg",
+"IMG-20251217-WA0015.jpg",
+"IMG-20260102-WA0026.jpg",
+"IMG-20260203-WA0206.jpg",
+"IMG-20260203-WA0453.jpg",
+"IMG-20260208-WA0004.jpg",
+"IMG-20260309-WA0139.jpg",
+"IMG-20260316-WA0035.jpg",
+"IMG-20260316-WA0040.jpg",
+"IMG-20260415-WA0025.jpg",
+"IMG-20260602-WA0020.jpg",
+"IMG-20260602-WA0025.jpg",
+"IMG-20260606-WA0148.jpg",
+"IMG-20260610-WA0013.jpg",
+"Screenshot_20251117-002853.png"
+
+];
+
+const carousel =
+document.getElementById("carouselInner");
+
+fotos.forEach((foto,index)=>{
+
+carousel.innerHTML += `
+
+<div class="carousel-item ${index === 0 ? 'active' : ''}">
+
+    <div class="photo-container">
+
+        <img
+            src="${foto}"
+            alt="Foto ${index+1}">
+
+    </div>
+
+    <div class="caption">
+
+        <h5>
+            Anexo ${String(index+1).padStart(2,'0')} ❤️
+        </h5>
+
+        <p>
+            Uma lembrança especial.
+        </p>
+
+    </div>
+
+</div>
+
+`;
+
+});
+
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
