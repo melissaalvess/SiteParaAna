@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Correspondência para Analuiza</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+
+:root{
+
+    --primary:#E63946;
+
+    --primary-dark:#D62839;
+
+    --offwhite:#FAF7F2;
+
+    --paper:#FFFDF9;
+
+    --text:#444;
+
+}
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+body{
+
+    min-height:100vh;
+
+    background:
+
+    radial-gradient(circle at top left,
+
+    rgba(230,57,70,.08),
+
+    transparent 35%),
+
+    radial-gradient(circle at bottom right,
+
+    rgba(255,180,162,.15),
+
+    transparent 40%),
+
+    var(--offwhite);
+
+    font-family:
+
+    "Segoe UI",
+
+    sans-serif;
+
+    overflow-x:hidden;
+
+}
+
+.container-main{
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-start;
+
+    align-items:center;
+
+    padding:60px 20px;
+
+}
+
+.header{
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+}
+
+.header h1{
+
+    color:var(--primary);
+
+    font-weight:800;
+
+}
+
+.header p{
+
+    color:#777;
+
+}
+
+.tap{
+
+    animation:pulse 2s infinite;
+
+}
+
+@keyframes pulse{
+
+    0%{
+
+        opacity:.4;
+
+    }
+
+    50%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        opacity:.4;
+
+    }
+
+}
+
+.scene{
+
+    position:relative;
+
+    /* width:900px;*/
+    max-width: 95vw;
+
+    height:260px;
+
+}
+
+.envelope{
+
+    position:relative;
+
+    width:350px;
+
+    height:220px;
+
+    cursor:pointer;
+
+}
+
+.envelope-body{
+
+    position:absolute;
+
+    bottom:0;
+
+    width:100%;
+
+    height:180px;
+
+    background:#f8d7da;
+
+    border-radius:0 0 20px 20px;
+
+    z-index:2;
+
+    box-shadow:
+
+    0 20px 40px rgba(0,0,0,.12);
+
+}
+
+.flap{
+
+    position:absolute;
+
+    top:0;
+
+    width:100%;
+
+    height:120px;
+
+    background:#f1c6cc;
+
+    clip-path:polygon(
+
+        0 0,
+
+        100% 0,
+
+        50% 100%
+
+    );
+
+    transform-origin:top;
+
+    transition:1s ease;
+
+    z-index:4;
+
+}
+
+.letter{
+
+    position:relative;
+
+    right:50%;
+
+    bottom:30px;
+
+    transform:translateX(-50%);
+
+    width: min(90vw, 800px);
+
+    height:150px;
+
+    background:var(--paper);
+
+    border-radius:16px;
+
+    padding:25px;
+
+    z-index:1;
+
+    transition:1.2s ease;
+
+    box-shadow:
+
+    0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.open .flap{
+
+    transform:rotateX(180deg);
+
+}
+
+.open .letter{
+
+    height: auto;
+    min-height: 450px;
+    width: 900px;
+    align-items: center;
+    transform:
+
+    translateX(-150px)
+
+    translateY(-50px);
+
+    z-index:5;
+
+}
+
+.letter-content{
+
+    opacity:0;
+
+    transition:1s ease;
+
+    color:var(--text);
+
+    line-height:1.8;
+
+}
+
+.open .letter-content{
+
+    opacity:1;
+
+}
+
+.letter-content h3{
+
+    color:var(--primary);
+
+    margin-bottom:15px;
+
+}
+
+.actions{
+
+    display:none;
+
+    margin-top:750px;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+}
+
+.actions.show{
+
+    display:flex;
+     
+
+}
+
+.menu-card{
+
+    width:180px;
+
+    background:white;
+
+    border-radius:22px;
+
+    padding:25px;
+
+    text-decoration:none;
+
+    color:#333;
+
+    text-align:center;
+
+    transition:.3s;
+
+    box-shadow:
+
+    0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.menu-card:hover{
+
+    transform:
+
+    translateY(-6px);
+
+    box-shadow:
+
+    0 15px 35px rgba(230,57,70,.18);
+
+}
+
+.icon{
+
+    font-size:2.5rem;
+
+    margin-bottom:10px;
+
+}
+
+.menu-card span{
+
+    display:block;
+
+    font-weight:600;
+
+}
+</style>
+</head>
+<body>
+<div class="container-main">
+<div class="header">
+<h1>Para: Ana Luiza 💌</h1>
+<p class="tap">
+
+            Toque no envelope para abrir
+</p>
+</div>
+<div class="scene">
+<div class="envelope" id="envelope">
+<div class="letter">
+<div class="letter-content">
+<h3>12 de Junho </h3>
+<p>
+
+                        Oi amor.
+</p>
+<p>
+
+                        Achou que eu não ia fazer nada né?
+
+                        
+</p>
+<p>
+
+                        Eu queria fazer algo diferente. Gostou?
+</p>
+<p>
+
+                        Vamos completar quase um ano namorando, e às vezes eu paro para pensar em tudo o que a gente viveu 
+                        nesse tempo. Assistimos a tantos filmes no cinema que já perdi a conta. Agente Secreto, Hamnet,
+                        Bugonia, Obsessão e vários outros. Experimentamos restaurantes, lanches diferentes, passamos finais
+                        de semana inteiros agarradinhas e criamos tantas memórias que é até difícil escolher uma favorita 
+                        para mim. Mas, se eu for sincera, algumas das minhas lembranças preferidas nem são as mais grandiosas.
+                        São as mais simples. São os momentos jogando baralho com você, rindo de coisas bobas, implicando uma
+                        com a outra, brincando de lutinha, tentando segurar a vampira do meu pescoço, ficando juntas sem 
+                        precisar fazer nada extraordinário. Porque, de alguma forma, qualquer coisa fica melhor quando
+                        é com você. Você virou a minha pessoa favorita para tudo. Para sair, para conversar, para assistir 
+                        filme, para reclamar da vida, para dividir as preocupações e também para comemorar as pequenas 
+                        conquistas. Você é a pessoa com quem eu mais me sinto confortável sendo eu mesma. Eu nunca achei 
+                        que fosse amar alguém desse jeito. Talvez porque eu tenha crescido assistindo comédias românticas
+                        e imaginando como seria encontrar alguém especial. Mas a verdade é que nenhuma delas me preparou
+                        para você, Ana Luiza.Porque nos filmes ninguém mostra direito as partes difíceis. 
+                        Ninguém mostra as inseguranças, os medos, as discussões ou os momentos em que a gente não sabe 
+                        muito bem o que fazer. E, mesmo assim, você escolhe ficar. Mesmo vendo meus defeitos, meus dias 
+                        ruins, minhas teimosias e minhas falhas. E isso significa mais para mim do que qualquer gesto grandioso.
+                        Eu quero continuar melhorando. Não só por mim, nem só por você, mas por nós. Porque eu acredito na gente. 
+                        Acredito em tudo o que construímos (ou tentando) até aqui e em tudo o que ainda vamos construir.
+                        Mal posso esperar para viver mais momentos ao seu lado. Mais filmes, mais lanches, mais fins de semana 
+                        agarradinhas, mais partidas de baralho, mais risadas, mais histórias para contar.
+                        Eu amo imaginar um futuro com você. Amo imaginar nossas próximas viagens, nossos próximos aniversários, 
+                        nossos próximos Dias dos Namorados e até nossos dois cachorros na nossa casa nova.
+                        Você é o meu lugar seguro. Você é a pessoa para quem eu quero contar as novidades primeiro.
+                        É a pessoa que eu procuro quando estou feliz, triste, ansiosa ou simplesmente com saudade.
+                        Com você, os dias comuns ficam especiais. Anseio te ver diariamente.
+                        E talvez essa seja a melhor forma de explicar o quanto eu te amo.
+                        Feliz Dia dos Namorados, bebezinha. Obrigada por esse quase um ano tão bonito. 
+                        Que venham muitos outros ao seu lado.
+                        
+</p>
+<p>
+
+                        Feliz Dia dos Namorados!.
+</p>
+</div>
+</div>
+<div class="flap"></div>
+<div class="envelope-body"></div>
+</div>
+</div>
+<div class="actions" id="actions">
+<a href="musica.html" class="menu-card">
+<div class="icon">🎵</div>
+<span>Nossa Música</span>
+</a>
+<a href="fotos.html" class="menu-card">
+<div class="icon">📸</div>
+<span>Fotografias</span>
+</a>
+<a href="final.html" class="menu-card">
+<div class="icon">⚠️</div>
+<span>Mensagem Final</span>
+</a>
+</div>
+</div>
+<script>
+
+const envelope =
+
+document.getElementById("envelope");
+
+let opened = false;
+
+envelope.addEventListener("click",()=>{
+
+    if(opened) return;
+
+    opened = true;
+
+    envelope.classList.add("open");
+
+    document.querySelector(".tap").style.display = "none";
+
+    setTimeout(()=>{
+
+        document
+
+        .getElementById("actions")
+
+        .classList
+
+        .add("show");
+
+    },1200);
+
+});
+</script>
+</body>
+</html>
+ 
